@@ -1,0 +1,23 @@
+The /src/ directory contains all the source code, the contents of each 
+subdirectory are:
+- /src/concurrentboruvka - contains code for the boruvka's implementation
+- /src/concurrentgraph - contains code for the graph ADT
+- /src/fastconcurrentboruvka - contains the code for the coarse-grained
+   locking implementation of Boruvka's algorithm which does not quite work
+- /src/fastconcurrentgraph - contains code for the graph ADT with the 
+   unsafe, non-locking versions of the operators
+- /src/noether - contains the source code for the noether package
+- /src/sequentialboruvka - code for the sequential boruvka used for 
+   comparison
+Any other directory probably contains old versions of programs that 
+don't work.
+
+make targets:
+'make conboruvka' makes the noether implementation of boruvka's
+'make seqboruvka' makes the sequential implementation of boruvka's
+All the .class files are output in to the /build/ directory
+
+To run concurrent boruvka:
+The Makefile doesn't make any jar files. You can run them from the JVM
+by typing 'java ConBoruvkaMain', it assumes the input is in a file in
+the same directory titled 'graph.txt'
